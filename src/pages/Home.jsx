@@ -1,6 +1,13 @@
-import React from "react";
+import { Banner, Category, Catalog } from "../components";
+
 const Home = () => {
-  return <div></div>;
+  return (
+    <>
+      <Banner />
+      <Category />
+      <Catalog />
+    </>
+  );
 };
 
 export default Home;
