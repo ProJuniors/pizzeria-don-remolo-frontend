@@ -1,6 +1,6 @@
-import { Layout } from "../containers/Layout";
-import Home from "../pages/Home";
-import "../styles/global.css";
+import Layout from '../containers/Layout';
+import Home from '../pages/Home';
+import '../styles/global.css';
 
 function App() {
   return (

@@ -1,6 +1,8 @@
-import { Banner, Category, Catalog } from "../components";
+import Banner from '../components/Banner';
+import Category from '../components/Category';
+import Catalog from '../components/Catalog';
 
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Banner />
@@ -8,6 +10,4 @@ const Home = () => {
       <Catalog />
     </>
   );
-};
-
-export default Home;
+}
