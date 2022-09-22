@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'linebreak-style': 0,
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'import/export': 0,
