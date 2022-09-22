@@ -6,26 +6,49 @@ import '../styles/Header.css';
 export default function Header() {
   return (
     <header>
-      <nav className="navbar">
-        <div className="navbar-left">
+      <nav className="flex flex-row justify-between h-28">
+        <div className="flex justify-between items-center gap-[18px] ml-[50px]">
           <img src={logo} alt="Logo don remolo" className="navbar-logo" />
-          <h3 className="navbar-logo-name">DON REMOLO</h3>
+          <h3 className="font-['IBM_Plex_Mono'] font-bold text-[40px] leading-[52px] text-black">
+            DON REMOLO
+          </h3>
         </div>
-        <div className="navbar-right">
-          <ul>
+        <div className="flex justify-center items-center gap-[47px] mr-[34px]">
+          <ul className="flex justify-center items-center gap-[47px] list-none">
             <li>
-              <a href="/">Categorías</a>
+              <a
+                className="no-underline not-italic font-normal text-xl text-black"
+                href="/"
+              >
+                Categorías
+              </a>
             </li>
             <li>
-              <a href="/">Sucursales</a>
+              <a
+                className="no-underline not-italic font-normal text-xl text-black"
+                href="/"
+              >
+                Sucursales
+              </a>
             </li>
             <li>
-              <a href="/">Contactanos</a>
+              <a
+                className="no-underline not-italic font-normal text-xl text-black"
+                href="/"
+              >
+                Contactanos
+              </a>
             </li>
           </ul>
-          <div className="navbar-shopping-cart">
-            <img src={shoppingCart} alt="Shopping Cart" />
-            <span>Ver carrito</span>
+          <div className="flex justify-center items-center bg-black py-[12px] px-[30px] rounded-[15px] gap-[15.12px]">
+            <img
+              className="w-[19.6px] h-[19.98px]"
+              src={shoppingCart}
+              alt="Shopping Cart"
+            />
+            <span className="not-italic font-normal text-xl text-white">
+              Ver carrito
+            </span>
           </div>
         </div>
       </nav>
