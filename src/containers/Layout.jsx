@@ -4,7 +4,7 @@ import '../styles/style.css';
 
 export default function Layout({ children }) {
   return (
-    <div className="">
+    <div className="max-w-1440 m-auto">
       <Header />
       {children}
       <Footer />
