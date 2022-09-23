@@ -3,8 +3,6 @@ import shoppingCart from '../assets/icons/icon-shopping-cart.svg';
 
 // import bgImg from '../assets/backround/Union.png';
 
-import '../styles/Header.css';
-
 export default function Header() {
   return (
     <div className="w-screen h-[80px] z-10 bg-zinc-50 fixed drop-shadow-lg">
