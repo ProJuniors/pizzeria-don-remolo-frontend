@@ -1,12 +1,14 @@
 import logo from '../assets/logos/logo.png';
 import shoppingCart from '../assets/icons/icon-shopping-cart.svg';
 
+// import bgImg from '../assets/backround/Union.png';
+
 import '../styles/Header.css';
 
 export default function Header() {
   return (
-    <header>
-      <nav className="flex flex-row justify-between h-28">
+    <div className="w-screen h-[80px] z-10 bg-zinc-50 fixed drop-shadow-lg">
+      <div className="px-2 flex justify-between items-center w-full h-full">
         <div className="flex justify-between items-center gap-[18px] ml-[50px]">
           <img src={logo} alt="Logo don remolo" className="navbar-logo" />
           <h3 className="font-['IBM_Plex_Mono'] font-bold text-[40px] leading-[52px] text-black">
@@ -51,7 +53,7 @@ export default function Header() {
             </span>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </div>
   );
 }
