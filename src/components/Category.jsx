@@ -5,7 +5,7 @@ import helado from '../assets/icons/helado.svg';
 
 export default function Category() {
   return (
-    <div className="relative bottom-72">
+    <div className="">
       <h2 className="font-Poppins font-semibold text-[25px] text-black mb-[77px]">
         Categorias
       </h2>
