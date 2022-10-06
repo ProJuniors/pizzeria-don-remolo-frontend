@@ -21,5 +21,7 @@ module.exports = {
     'react/jsx-filename-extension': [0],
     'react/no-multi-comp': 0,
     'import/no-duplicates': 0,
+    'no-unused-vars': 'warn',
+    'disable-next-line': 'comma-dangle',
   },
 };

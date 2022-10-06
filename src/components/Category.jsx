@@ -5,8 +5,10 @@ import helado from '../assets/icons/helado.svg';
 
 export default function Category() {
   return (
-    <>
-      <h2>Categorias</h2>
+    <div className="">
+      <h2 className="font-Poppins font-semibold text-[25px] text-black mb-[77px]">
+        Categorias
+      </h2>
       <div className="flex gap-[19px]">
         <div className="bg-white rounded-[60px] drop-shadow-[0px_8px_4px_rgba(0,0,0,0.1)]">
           <button className="py-[36px] px-[110px]" type="button">
@@ -29,6 +31,6 @@ export default function Category() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
