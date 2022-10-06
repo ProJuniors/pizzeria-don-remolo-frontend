@@ -4,8 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('/img/hero-pattern.svg')",
-        'footer-texture': "url('/img/footer-texture.png')",
+        'bg-image': "url('/src/assets/backround/Union.png')",
       },
       colors: {
         principal: '#E91717',
@@ -13,6 +12,11 @@ module.exports = {
       },
       maxWidth: {
         1440: '1440px',
+      },
+      fontFamily: {
+        Poppins: ['Poppins', 'sans-serif'],
+        'IBM-PLEX-MONO': ['IBM Plex Mono', 'monospace'],
+        'IBM-PLEX-SANS-DEVANAGARI': ['IBM Plex Sans Devanagari', 'sans-serif']
       },
     },
   },

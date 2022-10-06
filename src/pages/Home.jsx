@@ -5,9 +5,10 @@ import Catalog from '../components/Catalog';
 export default function Home() {
   return (
     <>
-      <Banner />
-      <Category />
-      <Catalog />
+      <Banner>
+        <Category />
+      </Banner>
+      {/* <Catalog /> */}
     </>
   );
 }

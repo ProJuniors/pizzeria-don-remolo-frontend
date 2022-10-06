@@ -1,28 +1,26 @@
 import pizza from '../assets/backround/pizza.png';
 
-export default function Banner() {
+export default function Banner({ children }) {
   return (
-    <div className="w-full h-screen bg-zinc-50 flex flex-col justify-between">
-      <div className="grid md:grid-cols-2 max-w-[1240px] m-auto mt-auto">
-        <div className="flex flex-col justify-center md:items-start w-full px-2 py-8">
-          <div>
-            <h1 className="text-7xl text-principal font-bold font-[Raleway]">
-              Compra desde la comodidad de tu casa
-            </h1>
-          </div>
-          <div>
-            <p className="text-base text-black  font-[Roboto] py-10">
-              Elegí la comida que más te guste, confirmá y pedí.
-            </p>
-          </div>
-          <div>
-            <p className="text-base2 py-20">Mirá nuestro catálogo</p>
-          </div>
+    <div className="pl-[49px] w-full">
+      <div className="bg-bg-image bg-no-repeat bg-right-top h-[1180px] relative">
+        <div className="w-[973px] max-w-[973px] h-[1165px] float-right shape flex" />
+        <div className="">
+          <h2 className="pt-80 font-Poppins font-semibold text-5xl leading-[72px] text-principal">
+            Compra desde la comodidad de tu casa
+          </h2>
+          <p className="font-Poppins font-normal text-3xl leading-[45px] mt-[49px] text-black">
+            Elegí la comida que más te guste, confirmá y pedí.
+          </p>
+          <p className="font-Poppins font-semibold text-xl leading-[30px] underline mt-[49px] decoration-solid">
+            Mirá nuestro catálogo
+          </p>
         </div>
-        <div className="pizza">
-          <img className="w-full object-scale-down " src={pizza} alt="/" />
+        <div className="absolute top-20 right-28">
+          <img className="" src={pizza} alt="Pizza" />
         </div>
       </div>
+      {children}
     </div>
   );
 }
