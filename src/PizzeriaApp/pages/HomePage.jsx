@@ -1,9 +1,9 @@
-import React from "react"
-import { Promotions } from "../components/Promotions"
-import { Banner } from "../components/Banner"
-import { Category } from "../components/Category"
+import React from 'react';
+import Promotions from '../components/Promotions';
+import Banner from '../components/Banner';
+import Category from '../components/Category';
 
-export const HomePage = () => {
+export default function HomePage() {
   return (
     <>
       <Banner />
@@ -12,5 +12,5 @@ export const HomePage = () => {
 
       <Promotions />
     </>
-  )
+  );
 }

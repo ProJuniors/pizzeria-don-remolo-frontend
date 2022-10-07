@@ -1,4 +1,4 @@
-export const Banner = () => {
+export default function Banner() {
   return (
     <div className="">
       <h1 className="text-5xl">Banner</h1>
@@ -6,5 +6,5 @@ export const Banner = () => {
       <p className="">Elegí la comida que más te guste, confirmá y pedí.</p>
       <p className="">Mirá nuestro catálogo</p>
     </div>
-  )
+  );
 }

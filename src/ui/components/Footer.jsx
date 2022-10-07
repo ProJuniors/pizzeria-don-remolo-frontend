@@ -1,7 +1,7 @@
-import { BsFacebook, BsInstagram } from "react-icons/bs"
-import logo from "/assets/logos/logo.png"
+import { BsFacebook, BsInstagram } from 'react-icons/bs';
+import logo from '../../../assets/logos/logo.png';
 
-export const Footer = () => {
+export default function Footer() {
   return (
     <div className="bg-black text-white grid grid-cols-3 h-[362px]">
       <section className="mt-[72px] ml-[67px] w-[206px]">
@@ -9,11 +9,7 @@ export const Footer = () => {
           <h3 className="font-IBM-PLEX-SANS-DEVANAGARI text-[40px] font-semibold leading-[61.2px] w-full">
             DON REMOLO
           </h3>
-          <img
-            className="absolute top-[-40px] right-[-20px] w-[138.03px]"
-            src={logo}
-            alt=""
-          />
+          <img className="absolute top-[-40px] right-[-20px] w-[138.03px]" src={logo} alt="" />
         </div>
         <span className="font-IBM-PLEX-SANS-DEVANAGARI font-light text-[25px] leading-[38.25px] ml-[26px]">
           Pizzería
@@ -52,5 +48,5 @@ export const Footer = () => {
         </section>
       </section>
     </div>
-  )
+  );
 }
