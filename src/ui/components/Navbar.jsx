@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="px-2 flex justify-between items-center w-full h-full">
         <div className="flex justify-between items-center gap-[18px] ml-[50px]">
           <img src={logo} alt="Logo don remolo" className="navbar-logo" />
-          <h3 className="font-['IBM_Plex_Mono'] font-bold text-[40px] leading-[52px] text-black">
+          <h3 className="font-IBM-Plex-Mono font-bold text-[40px] leading-[52px] text-black">
             DON REMOLO
           </h3>
         </div>
