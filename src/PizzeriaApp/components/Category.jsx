@@ -1,9 +1,9 @@
-import pizza from '../assets/icons/pizza.svg';
-import empanada from '../assets/icons/empanada.svg';
-import soda from '../assets/icons/soda.svg';
-import helado from '../assets/icons/helado.svg';
+import pizza from "/assets/icons/pizza.svg"
+import empanada from "/assets/icons/empanada.svg"
+import soda from "/assets/icons/soda.svg"
+import helado from "/assets/icons/helado.svg"
 
-export default function Category() {
+export const Category = () => {
   return (
     <div className="">
       <h2 className="font-Poppins font-semibold text-[25px] text-black mb-[77px]">
@@ -32,5 +32,5 @@ export default function Category() {
         </div>
       </div>
     </div>
-  );
+  )
 }

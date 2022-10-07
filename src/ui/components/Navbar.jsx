@@ -1,9 +1,9 @@
-import logo from '../assets/logos/logo.png';
-import shoppingCart from '../assets/icons/icon-shopping-cart.svg';
+import logo from "/assets/logos/logo.png"
+import shoppingCart from "/assets/icons/icon-shopping-cart.svg"
 
 // import bgImg from '../assets/backround/Union.png';
 
-export default function Header() {
+export const Navbar = () => {
   return (
     <div className="h-[80px] z-10 bg-white drop-shadow-lg">
       <div className="px-2 flex justify-between items-center w-full h-full">
@@ -53,5 +53,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  );
+  )
 }

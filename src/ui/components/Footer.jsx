@@ -1,7 +1,7 @@
-import { BsFacebook, BsInstagram } from 'react-icons/bs';
-import logo from '../assets/logos/logo.png';
+import { BsFacebook, BsInstagram } from "react-icons/bs"
+import logo from "/assets/logos/logo.png"
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <div className="bg-black text-white grid grid-cols-3 h-[362px]">
       <section className="mt-[72px] ml-[67px] w-[206px]">
@@ -52,5 +52,5 @@ export default function Footer() {
         </section>
       </section>
     </div>
-  );
+  )
 }
