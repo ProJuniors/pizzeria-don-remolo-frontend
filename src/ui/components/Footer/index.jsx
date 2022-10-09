@@ -6,7 +6,7 @@ import sectionData from './utils/sectionData';
 
 export default function Footer() {
   return (
-    <div className="bg-black text-white grid grid-cols-3 h-[362px]">
+    <div className="bg-secondary text-white grid grid-cols-3 h-[362px]">
       <section className="mt-[72px] ml-[67px] w-[206px]">
         <div className="relative">
           <h3 className="font-IBM-PLEX-SANS-DEVANAGARI text-[40px] font-semibold leading-[61.2px] w-full">

@@ -10,6 +10,11 @@ module.exports = {
       Poppins: ['Poppins', 'sans-serif'],
       Roboto: ['Roboto', 'sans-serif'],
     },
+    colors: {
+      primary: '#E91717',
+      secondary: '#000000',
+      white: '#FFFFFF',
+    },
     extend: {},
   },
   plugins: [],
