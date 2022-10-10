@@ -6,7 +6,7 @@ import HomePage from '../pages/HomePage';
 
 export default function PizzeriaRoutes() {
   return (
-    <div className="w-full">
+    <div className="max-w-[1440px] m-auto">
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

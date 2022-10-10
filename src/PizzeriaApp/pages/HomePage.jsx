@@ -5,7 +5,7 @@ import Category from '../components/Categories';
 
 export default function HomePage() {
   return (
-    <div className="w-[1440px]">
+    <div className="">
       <Banner />
       <Promotions />
       <Category />

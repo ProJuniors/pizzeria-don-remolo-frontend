@@ -1,5 +1,5 @@
-import logo from '../../../assets/logos/logo.png';
-import shoppingCart from '../../../assets/icons/icon-shopping-cart.svg';
+import logo from '../../assets/logos/logo.png';
+import shoppingCart from '../../assets/icons/icon-shopping-cart.svg';
 
 export default function Navbar() {
   return (

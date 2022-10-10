@@ -1,5 +1,5 @@
 import { BsFacebook, BsInstagram } from 'react-icons/bs';
-import logo from '../../../../assets/logos/logo.png';
+import logo from '../../../assets/logos/logo.png';
 import SectionFooter from './components/SectionFooter';
 
 import sectionData from './utils/sectionData';
