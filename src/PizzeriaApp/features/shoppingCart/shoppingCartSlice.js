@@ -22,18 +22,26 @@ const shoppingCartSlice = createSlice({
       if (filtro.length > 0) {
         state.cart.map((product) => {
           if (product.id === payload.id) {
-            // eslint-disable-next-line no-param-reassign
             product.quantity += 1;
           }
           return product;
         });
-        // state.cart.map();
       } else {
         state.cart.push(payload);
       }
     },
-    removeFromCart: () => {},
-    subtractFromCart: () => {},
+    removeFromCart: (state, { payload }) => {
+      state.cart = state.cart.filter((product) => product.id !== payload.id);
+    },
+    subtractFromCart: (state, { payload }) => {
+      state.cart.map((product) => {
+        if (product.id !== payload.id) return product;
+        if (product.quantity > 1) {
+          product.quantity -= 1;
+        }
+        return product;
+      });
+    },
   },
 });
 
