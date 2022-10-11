@@ -1,6 +1,6 @@
+import { BsTrash } from 'react-icons/bs';
 import React from 'react';
 import pizzaCart from '../../../assets/images/PizzaCart.png';
-import { BsTrash } from 'react-icons/bs';
 
 export default function Cart() {
   return (
