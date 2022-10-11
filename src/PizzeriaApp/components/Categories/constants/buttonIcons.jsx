@@ -1,15 +1,15 @@
 const buttonIcons = [
   {
-    alt: 'Pizzas',
+    name: 'Pizzas',
   },
   {
-    alt: 'Empanada',
+    name: 'Empanadas',
   },
   {
-    alt: 'Soda',
+    name: 'Bebidas',
   },
   {
-    alt: 'Helado',
+    name: 'Postres',
   },
 ];
 
