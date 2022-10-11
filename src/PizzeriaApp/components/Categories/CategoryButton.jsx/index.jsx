@@ -10,7 +10,9 @@ function CategoryButton({ categories, show }) {
     <button
       className={active.name === name ? bgBlack : bgWhite}
       type="button"
-      onClick={() => setActive({ name })}
+      onClick={() => {
+        setActive({ name });
+      }}
     >
       {name}
     </button>

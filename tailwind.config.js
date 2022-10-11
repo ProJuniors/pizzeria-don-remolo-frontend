@@ -18,6 +18,7 @@ module.exports = {
       },
       backgroundImage: {
         'bg-banner': "url('/src/assets/images/banner-img.png')",
+        'bg-banner-cart': "url('/src/assets/images/banner-cart.png')",
       },
     },
   },

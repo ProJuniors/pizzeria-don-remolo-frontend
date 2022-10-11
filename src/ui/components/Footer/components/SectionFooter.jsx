@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SectionFooter({ section }) {
   return (
-    <article className="flex flex-col">
+    <article className="flex flex-col align-bottom">
       <h3 className="h-[34px] w-full text-center mb-[25px] font-medium text-[25px] font-Nunito">
         {section.title}
       </h3>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useFetch } from '../../../../services/useFetch';
 import CardProduct from './CardProduct.js';
 
@@ -7,7 +7,7 @@ const index = ({ show }) => {
   const { data, loaded, error } = useFetch('http://localhost:6500/api/v1.0/products');
   if (loaded) {
     return (
-      <div className="w-full px-[97px]">
+      <div id="products" className="w-full px-[97px]">
         <h3 className="mt-[136px] mb-[82px] text-[35px] font-medium font-Roboto">Catálogo</h3>
         <div className="grid w-full grid-cols-3 gap-[32px]">
           {!loaded ? (
