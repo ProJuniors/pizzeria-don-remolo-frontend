@@ -7,7 +7,7 @@ set -e
 npm run build
 
 # navega al directorio de salida de compilación
-dist cd
+cd dist 
 
 # si estás desplegando en un dominio personalizado
 # echo 'www.ejemplo.com' > CNAME
