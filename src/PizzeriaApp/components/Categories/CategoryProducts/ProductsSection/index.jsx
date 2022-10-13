@@ -5,7 +5,7 @@ import CardProduct from '../CardProduct.js';
 
 const index = ({ show }) => {
   const { active } = show;
-  const { data, loaded, error } = useFetch('http://localhost:6500/api/v1.0/products');
+  const { data, loaded, error } = useFetch('https://api-remolo.onrender.com/api/v1.0/products');
   if (error) console.log(error);
 
   if (!loaded) {
