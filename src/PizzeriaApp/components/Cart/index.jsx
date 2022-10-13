@@ -72,6 +72,9 @@ export default function Cart() {
             </div>
           </article>
         </div>
+        <div>
+          <h4 className="mt-5 text-4xl">Total</h4>
+        </div>
       </section>
     </>
   );
