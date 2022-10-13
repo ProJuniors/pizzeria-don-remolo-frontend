@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import shoppingCartSlice from '../PizzeriaApp/features/shoppingCart/shoppingCartSlice';
+import shoppingCartSlice from './features/shoppingCart/shoppingCartSlice';
 
 const store = configureStore({
   reducer: {

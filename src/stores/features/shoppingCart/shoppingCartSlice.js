@@ -1,16 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  cart: [
-    {
-      id: 1,
-      productName: 'Hamburguer',
-      quantity: 1,
-      price: 200,
-    },
-  ],
+  cart: [],
   isLoading: false,
-  formCompleted: false,
 };
 
 const shoppingCartSlice = createSlice({
@@ -27,6 +19,7 @@ const shoppingCartSlice = createSlice({
           return product;
         });
       } else {
+        payload.quantity = 1;
         state.cart.push(payload);
       }
     },
