@@ -1,7 +1,7 @@
 import { MdAddShoppingCart } from 'react-icons/md';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../../../../stores/features/shoppingCart/shoppingCartSlice';
+import { addToCart } from '../../../../../store/features/shoppingCart/shoppingCartSlice';
 
 const index = ({ product }) => {
   const dispatch = useDispatch();

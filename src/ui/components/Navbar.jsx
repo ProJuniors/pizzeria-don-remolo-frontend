@@ -9,8 +9,6 @@ export default function Navbar() {
 
   const [totalProduct, setTotalProducts] = useState(0);
 
-  console.log(cart);
-
   useEffect(() => {
     setTotalProducts(cart.reduce((total, product) => product.quantity + total, 0));
   }, [cart]);

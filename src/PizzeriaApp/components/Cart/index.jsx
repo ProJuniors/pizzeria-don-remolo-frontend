@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import CartProduct from './CartProduct';
+import FormData from '../FormData';
 
 export default function Cart() {
   const { cart } = useSelector(({ shoppingCart }) => shoppingCart);
@@ -29,7 +30,7 @@ export default function Cart() {
         <h3 className="font-bold text-[40px] leading-[55px] mb-10">Finaliza tu compra</h3>
         <div className="grid gap-5">
           {cart.map((product) => (
-            <CartProduct product={product} />
+            <CartProduct key={product.id} product={product} />
           ))}
         </div>
         <div className="flex flex-row justify-between items-center font-Nunito mt-[86px]">
@@ -37,6 +38,7 @@ export default function Cart() {
           <span className="font-bold text-[45px] leading-[61.38px] ">${total}</span>
         </div>
       </section>
+      <FormData />
     </>
   );
 }
