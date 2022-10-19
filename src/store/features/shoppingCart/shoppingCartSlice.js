@@ -6,6 +6,7 @@ const initialState = {
   cart: [],
   totalToPay: 0,
   userData: {},
+  loaded: false,
 };
 
 const shoppingCartSlice = createSlice({
@@ -39,6 +40,9 @@ const shoppingCartSlice = createSlice({
       });
     },
     getTotal: (state) => {
+      if (state.cart.length === 0) {
+        state.totalToPay = 0;
+      }
       state.totalToPay = state.cart.reduce((prev, next) => {
         const total = next.quantity * next.price;
         return prev + total;
@@ -49,6 +53,7 @@ const shoppingCartSlice = createSlice({
     },
     loadProducts: (state, { payload }) => {
       state.data = payload;
+      state.loaded = true;
     },
     loadCarousel: (state, { payload }) => {
       state.carousel = payload;

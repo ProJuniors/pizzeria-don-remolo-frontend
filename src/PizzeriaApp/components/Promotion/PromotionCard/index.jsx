@@ -1,17 +1,31 @@
-import React from 'react';
-import pizza from '../assets/image.png';
+import { MdAddShoppingCart } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../../store/features/shoppingCart/shoppingCartSlice';
 
-const index = () => (
-  <div className="relative w-[400px] h-[400px] rounded-[5px]">
-    <img
-      className="w-full h-full object-center object-cover rounded-[5px]"
-      src={pizza}
-      alt="Pizza"
-    />
-    <div className="absolute bottom-0 w-full bg-black/[0.6] w-full h-[80px] flex items-center bg-white/[0.6]">
-      <span className="ml-[26px] text-[28px] font-Inter font-normal">Texto de la imagen</span>
+export default function PromotionCard({ favorite }) {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(addToCart({ ...favorite, quantity: 1 }));
+  };
+
+  return (
+    <div className="relative w-full h-[400px] rounded-[5px] overflow-hidden">
+      <img
+        className="w-full h-full object-center object-cover rounded-[5px] hover:scale-125"
+        src={favorite.urlImage}
+        alt={favorite.productName}
+      />
+      <div className="absolute bottom-0 w-full h-[80px] flex items-center bg-white/[0.6]">
+        <span className="ml-[26px] text-[28px] font-Inter font-normal">{favorite.productName}</span>
+      </div>
+      <button
+        onClick={handleClick}
+        className="bg-black p-3 text-white absolute bottom-14 right-5 rounded-xl active:scale-105"
+        type="button"
+      >
+        <MdAddShoppingCart size={25} />
+      </button>
     </div>
-  </div>
-);
-
-export default index;
+  );
+}

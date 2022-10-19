@@ -27,7 +27,7 @@ export default function Banner() {
       {carousel.map((element) => (
         <SwiperSlide key={element}>
           <div
-            className="justify-center bg-no-repeat bg-cover bg-center w-full h-[820px] "
+            className="before:content-['*'] before:absolute before:top-0 before:left-0 before:flex before:w-full before:h-full before:bg-black/60 before:z-10 justify-center bg-no-repeat bg-cover bg-center w-full h-[820px] "
             style={{ backgroundImage: `url(${element})` }}
           />
 

@@ -7,7 +7,7 @@ const index = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(addToCart(product));
+    dispatch(addToCart({ ...product, quantity: 1 }));
     dispatch(getTotal());
   };
 
@@ -26,7 +26,7 @@ const index = ({ product }) => {
         <h4 className="text-[28px] font-medium font-Nunito">${product.price}</h4>
         <button
           onClick={handleClick}
-          className="flex justify-center gap-[14.33px] items-center w-[151px] bg-black text-white rounded-[15px]"
+          className="active:scale-105 flex justify-center gap-[14.33px] items-center w-[151px] bg-black text-white rounded-[15px]"
           type="button"
         >
           <MdAddShoppingCart />
