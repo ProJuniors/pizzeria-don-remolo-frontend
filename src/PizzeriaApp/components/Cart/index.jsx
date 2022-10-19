@@ -1,20 +1,9 @@
 import { useSelector } from 'react-redux';
-import React, { useEffect, useState } from 'react';
 import CartProduct from './CartProduct';
 import FormData from '../FormData';
 
 export default function Cart() {
-  const { cart } = useSelector(({ shoppingCart }) => shoppingCart);
-
-  const [total, setTotal] = useState(0);
-
-  useEffect(() => {
-    const productPriceTotal = cart.reduce((value, product) => {
-      const calcTotal = product.price * product.quantity;
-      return value + calcTotal;
-    }, 0);
-    setTotal(productPriceTotal);
-  }, [cart]);
+  const { cart, totalToPay } = useSelector(({ shoppingCart }) => shoppingCart);
 
   return (
     <>
@@ -35,7 +24,7 @@ export default function Cart() {
         </div>
         <div className="flex flex-row justify-between items-center font-Nunito mt-[86px]">
           <h4 className="ml-[12px] text-4xl font-semibold text-[45px] leading-[61.38px]">Total</h4>
-          <span className="font-bold text-[45px] leading-[61.38px] ">${total}</span>
+          <span className="font-bold text-[45px] leading-[61.38px] ">${totalToPay}</span>
         </div>
       </section>
       <FormData />
