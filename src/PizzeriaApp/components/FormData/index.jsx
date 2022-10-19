@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../../hooks/useForm';
+import { useWhatsappMessage } from '../../../hooks/useWhatsappMessage';
+import { getUserData } from '../../../store/features/shoppingCart/shoppingCartSlice';
+
+const initialForm = { name: '', phone: '', note: '' };
 
 export default function FormData() {
-  const { name, phone, nota, onInputChange } = useForm({ name: '', phone: '', nota: '' });
+  const { name, phone, note, onInputChange, formState } = useForm(initialForm);
 
+  const { message } = useWhatsappMessage();
+
+  const dispatch = useDispatch();
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({ name, phone, nota });
+    // eslint-disable-next-line no-undef
+    window.open(message, '_black');
   };
+
+  useEffect(() => {
+    dispatch(getUserData({ name, phone, note }));
+  }, [formState]);
 
   return (
     <section className="mx-[64px] font-Nunito mb-36">
@@ -35,8 +49,8 @@ export default function FormData() {
           className="border pl-[42px] pt-16"
           onChange={onInputChange}
           rows="3"
-          value={nota}
-          name="nota"
+          value={note}
+          name="note"
           placeholder="Agregar nota al pedido..."
         />
 

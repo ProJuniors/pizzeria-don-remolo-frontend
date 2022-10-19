@@ -1,8 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  data: [],
+  carousel: [],
   cart: [],
-  isLoading: false,
+  totalToPay: 0,
+  userData: {},
 };
 
 const shoppingCartSlice = createSlice({
@@ -35,9 +38,32 @@ const shoppingCartSlice = createSlice({
         return product;
       });
     },
+    getTotal: (state) => {
+      state.totalToPay = state.cart.reduce((prev, next) => {
+        const total = next.quantity * next.price;
+        return prev + total;
+      }, 0);
+    },
+    getUserData: (state, { payload }) => {
+      state.userData = payload;
+    },
+    loadProducts: (state, { payload }) => {
+      state.data = payload;
+    },
+    loadCarousel: (state, { payload }) => {
+      state.carousel = payload;
+    },
   },
 });
 
-export const { addToCart, removeFromCart, subtractFromCart } = shoppingCartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  subtractFromCart,
+  getTotal,
+  getUserData,
+  loadProducts,
+  loadCarousel,
+} = shoppingCartSlice.actions;
 
 export default shoppingCartSlice;

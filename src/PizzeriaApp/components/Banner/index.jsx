@@ -1,7 +1,40 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { useFetch } from '../../../services/useFetch';
+import { loadCarousel } from '../../../store/features/shoppingCart/shoppingCartSlice';
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css';
+
 export default function Banner() {
+  const dispatch = useDispatch();
+
+  const { error } = useFetch('https://api-remolo.onrender.com/api/v1.0/carrusels', ({ data }) => {
+    dispatch(loadCarousel(data));
+  });
+
+  const { carousel } = useSelector(({ shoppingCart }) => shoppingCart);
+
+  if (error) console.log(error);
+
   return (
-    <div className="font-Poppins text-white bg-bg-banner w-full h-[817px] bg-black/[0.5] flex flex-col align-middle justify-center">
-      <div className="ml-[160px] max-w-[650px]">
+    <Swiper
+      className="relative"
+      autoplay={{ delay: 3500, disableOnInteraction: false }}
+      slidesPerView={1}
+      modules={[Autoplay]}
+    >
+      {carousel.map((element) => (
+        <SwiperSlide key={element}>
+          <div
+            className="justify-center bg-no-repeat bg-cover bg-center w-full h-[820px] "
+            style={{ backgroundImage: `url(${element})` }}
+          />
+
+          {/* <img className="w-full object-cover relative" src={element} alt={element} /> */}
+        </SwiperSlide>
+      ))}
+      <div className="ml-[160px] max-w-[650px] text-white absolute top-[35%] z-10">
         <h2 className=" font-semibold text-[46px] leading-[72px] mb-5">
           Compra desde la comodidad de tu casa
         </h2>
@@ -15,6 +48,6 @@ export default function Banner() {
           Mirá nuestro catálogo
         </a>
       </div>
-    </div>
+    </Swiper>
   );
 }
