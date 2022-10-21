@@ -29,7 +29,7 @@ export default function CartProduct({ product }) {
   return (
     <article className="flex flex-row justify-between bg-white w-full border border-solid border-[#DADADA] drop-shadow-[0_4px_1px_rgba(0,0,0,0.25)]">
       <div className="flex justify-center items-center flex-row">
-        <img src={urlImage} alt={productName} width={286} />
+        <img className="object-contain h-56" src={urlImage} alt={productName} width={286} />
         <div className="pl-[25px] flex flex-col gap-6">
           <h4 className="font-bold text-[35px] leading-[47.74px]">{productName}</h4>
           <p className="font-normal text-[25px] leading-[34.1px]">{description}</p>
