@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Cart() {
   const { cart, totalToPay } = useSelector(({ shoppingCart }) => shoppingCart);
-  console.log(cart);
+
   return (
     <>
       <section>
