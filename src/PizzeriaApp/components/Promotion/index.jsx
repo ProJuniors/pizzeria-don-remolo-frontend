@@ -18,8 +18,8 @@ export default function Promotions() {
       <Swiper slidesPerView={3} spaceBetween={50} navigation={true} modules={[Navigation]}>
         {loaded &&
           data.favorites.map((favorite) => (
-            <SwiperSlide>
-              <PromotionCard key={`promotions-${favorite}`} favorite={favorite} />
+            <SwiperSlide key={`promotions-${favorite.id}`}>
+              <PromotionCard favorite={favorite} />
             </SwiperSlide>
           ))}
       </Swiper>

@@ -7,6 +7,7 @@ import {
   removeFromCart,
   subtractFromCart,
 } from '../../../../store/features/shoppingCart/shoppingCartSlice';
+import toast from 'react-hot-toast';
 
 export default function CartProduct({ product }) {
   const { urlImage, productName, description, price, quantity, id } = product;
@@ -17,10 +18,12 @@ export default function CartProduct({ product }) {
   useEffect(() => {
     dispatch(getTotal());
   }, [cart]);
+  const notify = () => toast.error('Producto eliminado del carrito');
 
   const handleRemoveFromCart = () => {
     dispatch(removeFromCart({ id }));
     dispatch(getTotal());
+    notify();
   };
 
   return (
