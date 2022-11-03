@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="flex justify-center items-center bg-secondary py-[12px] px-[30px] rounded-[15px] gap-[15.12px]">
             <img className="w-[19.6px] h-[19.98px]" src={shoppingCartIcon} alt="Shopping Cart" />
             <span className="not-italic font-normal text-xl text-white">
-              Ver carrito {totalProduct}
+              Ver carrito {totalProduct > 99 ? "99+" : totalProduct }
             </span>
           </div>
         </Link>
