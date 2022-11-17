@@ -1,45 +1,38 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../../hooks/useForm';
+import useShoppingCartStore from '../../../hooks/useShoppingCartStore';
 import { useWhatsappMessage } from '../../../hooks/useWhatsappMessage';
-import { getUserData } from '../../../store/features/shoppingCart/shoppingCartSlice';
-import { validateToSubmit, validator, errorsMessage } from '../../../utils/validateFields.utils';
+import { validateToSubmit, validator } from '../../../utils/validateFields.utils';
 import ErrorMessage from './ErrorMessage';
 
 const initialForm = { name: '', phone: '', note: '' };
 
 export default function FormData() {
-  const { 
-    name, 
-    phone, 
-    note, 
-    onInputChange, 
-    formState,
-    validation,
-    setValidation
-  } = useForm(initialForm, validator);
+  const { name, phone, note, onInputChange, formState, validation, setValidation } = useForm(
+    initialForm,
+    validator
+  );
+
+  const { startGettingUserData } = useShoppingCartStore();
 
   const { message } = useWhatsappMessage();
 
-  const dispatch = useDispatch();
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateToSubmit(validation)) {
       // eslint-disable-next-line no-undef
       window.open(message, '_black');
     } else {
-      alert("Aqui va una alerta de que no se puede enviar")
+      alert('Aqui va una alerta de que no se puede enviar');
     }
   };
   useEffect(() => {
-    dispatch(getUserData({ name, phone, note }));
-    console.log(validation)
+    startGettingUserData({ name, phone, note });
   }, [formState]);
 
   useEffect(() => {
-    if(note === "") setValidation({ ...validation, note: true})
-  },[])
+    if (note === '') setValidation({ ...validation, note: true });
+  }, []);
   return (
     <section className="mx-[64px] font-Nunito mb-36">
       <h3 className="font-semibold text-3xl leading-[41px] not-italic mb-8">
@@ -54,7 +47,7 @@ export default function FormData() {
           value={name}
           onChange={onInputChange}
         />
-        { name !== "" && validation["name"] === false ?<ErrorMessage field= {"name"}/>: <></>}
+        {name !== '' && validation['name'] === false ? <ErrorMessage field={'name'} /> : <></>}
         <input
           className="border border-solid/50 py-[45px] pl-[42px] rounded"
           type="text"
@@ -63,16 +56,16 @@ export default function FormData() {
           value={phone}
           onChange={onInputChange}
         />
-        { phone !== "" && validation["phone"] === false ?<ErrorMessage field= {"phone"}/>: <></>}
+        {phone !== '' && validation['phone'] === false ? <ErrorMessage field={'phone'} /> : <></>}
         <textarea
-          className="border pl-[42px] pt-16"
+          className="border pl-[42px] pt-16 "
           onChange={onInputChange}
           rows="3"
           value={note}
           name="note"
           placeholder="Agregar nota al pedido..."
         />
-        { note !== "" && validation["note"] === false ?<ErrorMessage field= {"note"}/>: <></>}
+        {note !== '' && validation['note'] === false ? <ErrorMessage field={'note'} /> : <></>}
         <button
           className="font-Roboto font-medium text-3xl leading-[35px] text-white bg-black mx-auto w-full max-w-4xl py-[32px] rounded-xl"
           onClick={handleSubmit}

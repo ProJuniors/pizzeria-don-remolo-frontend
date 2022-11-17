@@ -1,21 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useFetch } from '../../../services/useFetch';
-import { loadCarousel } from '../../../store/features/shoppingCart/shoppingCartSlice';
+
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
+import useShoppingCartStore from '../../../hooks/useShoppingCartStore';
 
 export default function Banner() {
-  const dispatch = useDispatch();
+  const { startLoadingCarousel, carousel } = useShoppingCartStore();
 
-  const { error } = useFetch('https://api-remolo.onrender.com/api/v1.0/carrusels', ({ data }) => {
-    dispatch(loadCarousel(data));
-  });
-
-  const { carousel } = useSelector(({ shoppingCart }) => shoppingCart);
-
-  if (error) console.log(error);
+  useEffect(() => {
+    startLoadingCarousel();
+  }, []);
 
   return (
     <Swiper
