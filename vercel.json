@@ -1,5 +1,16 @@
 {
   "routes": [
-    { "src": "/cart", "dest": "/index.html"}
+    {
+      "src": "/cart",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/sucursales",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/contactanos",
+      "dest": "/index.html"
+    }
   ]
 }

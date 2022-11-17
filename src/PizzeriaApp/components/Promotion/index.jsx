@@ -1,13 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import PromotionCard from './PromotionCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import useShoppingCartStore from '../../../hooks/useShoppingCartStore';
 
 export default function Promotions() {
-  const { data, loaded } = useSelector(({ shoppingCart }) => shoppingCart);
+  const { data, loaded } = useShoppingCartStore();
 
   return (
     <div className="w-full px-[64px] mb-[131px]">

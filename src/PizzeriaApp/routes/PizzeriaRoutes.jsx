@@ -3,6 +3,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Footer from '../../ui/components/Footer';
 import Navbar from '../../ui/components/Navbar';
 import CartPage from '../pages/CartPage';
+import ContactanosPage from '../pages/ContantanosPage';
+import SucursalesPage from '../pages/SucursalesPage';
 import HomePage from '../pages/HomePage';
 import { Toaster } from 'react-hot-toast';
 
@@ -30,6 +32,8 @@ export default function PizzeriaRoutes() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/contactanos" element={<ContactanosPage />} />
+        <Route path="/sucursales" element={<SucursalesPage />} />
 
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>

@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Waveform } from '@uiball/loaders';
-import { useDispatch, useSelector } from 'react-redux';
-import { useFetch } from '../../../../../services/useFetch';
 import CardProduct from '../CardProduct.js';
-import { loadProducts } from '../../../../../store/features/shoppingCart/shoppingCartSlice';
+import useShoppingCartStore from '../../../../../hooks/useShoppingCartStore.js';
 
 const index = ({ show }) => {
-  const { active } = show;
-  const dispatch = useDispatch();
-  const { error } = useFetch('https://api-remolo.onrender.com/api/v1.0/products', ({ data }) => {
-    dispatch(loadProducts(data));
-  });
+  const { startLoadingProducts, data } = useShoppingCartStore();
 
-  const { data } = useSelector(({ shoppingCart }) => shoppingCart);
-  if (error) console.log(error);
+  useEffect(() => {
+    startLoadingProducts();
+  }, []);
+
+  const { active } = show;
 
   if (data.length === 0) {
     return <Waveform size={40} lineWeight={3.5} speed={1} color="black" />;

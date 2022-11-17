@@ -1,10 +1,10 @@
-import { useSelector } from 'react-redux';
 import CartProduct from './CartProduct';
 import FormData from '../FormData';
-import { Link } from 'react-router-dom';
+import EmptyCart from './EmptyCart';
+import useShoppingCartStore from '../../../hooks/useShoppingCartStore';
 
 export default function Cart() {
-  const { cart, totalToPay } = useSelector(({ shoppingCart }) => shoppingCart);
+  const { cart, totalToPay } = useShoppingCartStore();
 
   return (
     <>
@@ -17,14 +17,7 @@ export default function Cart() {
         </div>
       </section>
       {cart.length < 1 ? (
-        <h2 className="text-4xl font-semibold p-10 h-screen">
-          No hay productos cargados en el carrito de compras, por favor{' '}
-          <Link to="/" className="underline">
-            añade productos
-          </Link>
-          <br></br>
-          TODO: Poner imagen alusiva a carrito vacio
-        </h2>
+        <EmptyCart />
       ) : (
         <div>
           <section className="pt-[64px] px-[66px] font-Nunito text-black mb-[80px]">

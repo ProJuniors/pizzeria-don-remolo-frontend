@@ -1,17 +1,12 @@
 import { MdAddShoppingCart } from 'react-icons/md';
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { addToCart, getTotal } from '../../../../../store/features/shoppingCart/shoppingCartSlice';
-import toast from 'react-hot-toast';
+import useShoppingCartStore from '../../../../../hooks/useShoppingCartStore';
 
 const index = ({ product }) => {
-  const dispatch = useDispatch();
-  const notify = () => toast.success('Producto añadido');
+  const { startAddingFromCart } = useShoppingCartStore();
 
   const handleClick = () => {
-    dispatch(addToCart({ ...product, quantity: 1 }));
-    dispatch(getTotal());
-    notify();
+    startAddingFromCart(product, 'Producto añadido');
   };
 
   return (
