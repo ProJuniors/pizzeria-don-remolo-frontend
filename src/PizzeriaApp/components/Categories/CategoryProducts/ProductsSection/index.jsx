@@ -17,7 +17,7 @@ const index = ({ show }) => {
   }
 
   return (
-    <div className="grid w-full grid-cols-3 gap-[32px]">
+    <div className="grid w-full grid-cols-1 md:grid-cols-3 gap-[32px]">
       {data.products
         .filter((product) => product.category === active.name)
         // eslint-disable-next-line no-shadow

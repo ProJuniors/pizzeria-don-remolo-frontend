@@ -9,7 +9,7 @@ export default function PromotionCard({ favorite }) {
   };
 
   return (
-    <div className="relative w-full h-[400px] rounded-[5px] overflow-hidden group">
+    <div className="relative rounded-[5px] overflow-hidden group">
       <img
         className="w-full h-full object-center object-cover rounded-[5px] hover:scale-125"
         src={favorite.urlImage}
