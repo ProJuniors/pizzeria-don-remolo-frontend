@@ -10,7 +10,7 @@ import { Toaster } from 'react-hot-toast';
 
 export default function PizzeriaRoutes() {
   return (
-    <div className="max-w-[1440px] m-auto">
+    <div className="max-w-[2560px] m-auto">
       <Navbar />
       <Toaster
         position="top-top-right"

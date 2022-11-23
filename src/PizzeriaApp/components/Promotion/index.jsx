@@ -10,12 +10,12 @@ export default function Promotions() {
   const { data, loaded } = useShoppingCartStore();
 
   return (
-    <div className="w-full px-[64px] mb-[131px]">
-      <h3 className="mb-[60px] mt-[64px] font-Poppins font-medium text-3xl">
+    <div className="w-full px-[22px] mb-[50px]">
+      <h3 className="mb-[34px] mt-[34px] font-Poppins font-medium text-2xl">
         ¡Aprovecha las promociones de la semana!
       </h3>
 
-      <Swiper slidesPerView={3} spaceBetween={50} navigation={true} modules={[Navigation]}>
+      <Swiper slidesPerView={1} spaceBetween={50} navigation={true} modules={[Navigation]}>
         {loaded &&
           data.favorites.map((favorite) => (
             <SwiperSlide key={`promotions-${favorite.id}`}>

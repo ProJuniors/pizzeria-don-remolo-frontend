@@ -1,7 +1,7 @@
+import { HashLink } from 'react-router-hash-link';
 import { useEffect } from 'react';
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
 import useShoppingCartStore from '../../../hooks/useShoppingCartStore';
@@ -23,26 +23,31 @@ export default function Banner() {
       {carousel.map((element) => (
         <SwiperSlide key={element}>
           <div
-            className="before:content-['*'] before:absolute before:top-0 before:left-0 before:flex before:w-full before:h-full before:bg-black/60 before:z-10 justify-center bg-no-repeat bg-cover bg-center w-full h-[820px] "
+            className="before:content-[' '] before:absolute before:top-0 before:left-0 before:flex before:w-full before:h-[calc(100vh-106px)] before:bg-black/60  justify-center bg-no-repeat bg-cover bg-center w-full h-[calc(100vh-106px)] max-h-[800px]"
             style={{ backgroundImage: `url(${element})` }}
           />
 
           {/* <img className="w-full object-cover relative" src={element} alt={element} /> */}
         </SwiperSlide>
       ))}
-      <div className="ml-[160px] max-w-[650px] text-white absolute top-[35%] z-10">
+      <div className="ml-8 md:ml-[160px] max-w-[650px] text-white absolute top-[15%] z-[1]">
         <h2 className=" font-semibold text-[46px] leading-[72px] mb-5">
           Compra desde la comodidad de tu casa
         </h2>
         <p className=" font-normal text-[25px] leading-[37.5px] mb-9">
           Elegí la comida que más te guste, confirmá y pedí.
         </p>
-        <a
-          href="#categories"
-          className="font-semibold text-sm leading-[30px] underline decoration-white"
+        <HashLink
+          scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+          to="/#categories"
         >
-          Mirá nuestro catálogo
-        </a>
+          <button
+            className="font-semibold text-base leading-[30px] underline decoration-white"
+            type="button"
+          >
+            Mirá nuestro catálogo
+          </button>
+        </HashLink>
       </div>
     </Swiper>
   );

@@ -3,7 +3,7 @@ import React from 'react';
 function CategoryButton({ categories, show }) {
   const { name } = categories;
   const { active, setActive } = show;
-  const generalStyle = `font-Poppins w-[290px] h-[109px] rounded-[60px] drop-shadow-[0px_8px_4px_rgba(0,0,0,0.3)] text-[25px] font-normal`;
+  const generalStyle = `font-Poppins p-2 rounded-[60px] drop-shadow-[0px_8px_4px_rgba(0,0,0,0.3)] text-[15px] font-normal`;
   const bgWhite = ` ${generalStyle} bg-white`;
   const bgBlack = `${generalStyle} bg-black text-white`;
   return (
