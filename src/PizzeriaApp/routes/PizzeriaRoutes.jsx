@@ -7,6 +7,7 @@ import ContactanosPage from '../pages/ContantanosPage';
 import SucursalesPage from '../pages/SucursalesPage';
 import HomePage from '../pages/HomePage';
 import { Toaster } from 'react-hot-toast';
+import MenuButton from '../../ui/components/MenuButton';
 
 export default function PizzeriaRoutes() {
   return (
@@ -29,6 +30,8 @@ export default function PizzeriaRoutes() {
           },
         }}
       />
+
+      <MenuButton />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />

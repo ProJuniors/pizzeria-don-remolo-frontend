@@ -30,11 +30,11 @@ export default function Banner() {
           {/* <img className="w-full object-cover relative" src={element} alt={element} /> */}
         </SwiperSlide>
       ))}
-      <div className="ml-8 md:ml-[160px] max-w-[650px] text-white absolute top-[15%] z-[1]">
-        <h2 className=" font-semibold text-[46px] leading-[72px] mb-5">
+      <div className="ml-6 md:ml-[120px] max-w-[650px] text-white absolute top-[18%] z-[1]">
+        <h2 className=" font-semibold text-[42px] leading-[52px] mb-5">
           Compra desde la comodidad de tu casa
         </h2>
-        <p className=" font-normal text-[25px] leading-[37.5px] mb-9">
+        <p className=" font-normal text-[20px] leading-[32px] mb-9">
           Elegí la comida que más te guste, confirmá y pedí.
         </p>
         <HashLink
