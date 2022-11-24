@@ -34,13 +34,13 @@ export default function FormData() {
     if (note === '') setValidation({ ...validation, note: true });
   }, []);
   return (
-    <section className="mx-[64px] font-Nunito mb-36">
-      <h3 className="font-semibold text-3xl leading-[41px] not-italic mb-8">
+    <section className="mx-[22px] font-Nunito mb-[22px]">
+      <h3 className="font-semibold text-xl leading-[34px] not-italic mb-8">
         Para confirmar la compra, por favor completá los siguientes datos:
       </h3>
-      <form className="w-full flex flex-col gap-[36px] font-Roboto not-italic font-medium text-[#8D8D8D] text-[30px]">
+      <form className="w-full flex flex-col gap-[16px] font-Roboto not-italic font-medium text-[#8D8D8D] text-[20px]">
         <input
-          className="border border-solid/50 py-[45px] pl-[42px] rounded"
+          className="border border-solid/50 py-[25px] px-[22px] rounded"
           type="text"
           placeholder="Nombre completo"
           name="name"
@@ -49,7 +49,7 @@ export default function FormData() {
         />
         {name !== '' && validation['name'] === false ? <ErrorMessage field={'name'} /> : <></>}
         <input
-          className="border border-solid/50 py-[45px] pl-[42px] rounded"
+          className="border border-solid/50 py-[25px] px-[22px] rounded"
           type="text"
           placeholder="Número de teléfono"
           name="phone"
@@ -58,7 +58,7 @@ export default function FormData() {
         />
         {phone !== '' && validation['phone'] === false ? <ErrorMessage field={'phone'} /> : <></>}
         <textarea
-          className="border pl-[42px] pt-16 "
+          className="border px-[22px] py-[22px] "
           onChange={onInputChange}
           rows="3"
           value={note}
@@ -67,7 +67,7 @@ export default function FormData() {
         />
         {note !== '' && validation['note'] === false ? <ErrorMessage field={'note'} /> : <></>}
         <button
-          className="font-Roboto font-medium text-3xl leading-[35px] text-white bg-black mx-auto w-full max-w-4xl py-[32px] rounded-xl"
+          className="font-Roboto font-medium text-lg leading-[35px] text-white mt-[22px] bg-black mx-auto w-full max-w-4xl py-[12px] rounded-xl"
           onClick={handleSubmit}
           type="button"
         >

@@ -5,7 +5,7 @@ import emptyCart from '../../../../assets/images/empty-cart.png';
 
 export default function EmptyCart() {
   return (
-    <div className="w-full flex flex-col justify-center items-center py-[150px] font-Roboto">
+    <div className="w-full flex flex-col justify-center items-center px-[22px] text-center py-[50px] font-Roboto">
       <div className="w-[313px]">
         <img src={emptyCart} />
       </div>

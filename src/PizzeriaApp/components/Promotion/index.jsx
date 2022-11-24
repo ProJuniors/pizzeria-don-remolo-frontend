@@ -11,7 +11,7 @@ export default function Promotions() {
 
   return (
     <div className="w-full px-[22px] mb-[50px]">
-      <h3 className="mb-[34px] mt-[34px] font-Poppins font-medium text-2xl">
+      <h3 className="mb-[30px] mt-[30px] font-Poppins font-medium text-2xl">
         ¡Aprovecha las promociones de la semana!
       </h3>
 
