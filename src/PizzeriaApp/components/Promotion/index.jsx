@@ -5,9 +5,21 @@ import PromotionCard from './PromotionCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import useShoppingCartStore from '../../../hooks/useShoppingCartStore';
+import { useEffect } from 'react';
+import detectResize from '../../../utils/detectResize';
+import { useState } from 'react';
 
 export default function Promotions() {
   const { data, loaded } = useShoppingCartStore();
+
+  const [width, setWidth] = useState();
+
+  useEffect(() => {
+    setWidth(detectResize());
+    window.addEventListener('resize', () => {
+      setWidth(detectResize());
+    });
+  }, []);
 
   return (
     <div className="w-full px-[22px] mb-[50px]">
@@ -15,7 +27,7 @@ export default function Promotions() {
         ¡Aprovecha las promociones de la semana!
       </h3>
 
-      <Swiper slidesPerView={1} spaceBetween={50} navigation={true} modules={[Navigation]}>
+      <Swiper slidesPerView={width} spaceBetween={50} navigation={true} modules={[Navigation]}>
         {loaded &&
           data.favorites.map((favorite) => (
             <SwiperSlide key={`promotions-${favorite.id}`}>

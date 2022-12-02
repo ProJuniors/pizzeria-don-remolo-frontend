@@ -10,7 +10,7 @@ const index = ({ product }) => {
   };
 
   return (
-    <div className="w-full flex flex-col max-w-[352px] shadow-[0px_8px_4px_rgba(0,0,0,0.25)]">
+    <div className="w-full flex flex-col max-w-[452px] shadow-[0px_8px_4px_rgba(0,0,0,0.25)]">
       <img
         className="w-full h-[253px] object-cover"
         src={product.urlImage}

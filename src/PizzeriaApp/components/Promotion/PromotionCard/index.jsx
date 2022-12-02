@@ -9,14 +9,14 @@ export default function PromotionCard({ favorite }) {
   };
 
   return (
-    <div className="relative rounded-[5px] overflow-hidden group">
+    <div className="relative rounded-[5px] overflow-hidden h-[250px] group">
       <img
-        className="w-full h-full object-center object-cover rounded-[5px] hover:scale-125"
+        className="w-full h-full object-center object-contain rounded-[5px] hover:scale-125"
         src={favorite.urlImage}
         alt={favorite.productName}
       />
-      <div className="absolute bottom-0 w-full h-[80px] flex items-center bg-white/[0.6]">
-        <span className="ml-[26px] text-[28px] font-Inter font-normal">{favorite.productName}</span>
+      <div className="absolute bottom-0 w-full h-[80px] flex items-center justify-center bg-white/[0.6]">
+        <span className="ml-[26px] text-[24px] font-Inter font-normal">{favorite.productName}</span>
       </div>
       <button
         onClick={handleAddFromCart}

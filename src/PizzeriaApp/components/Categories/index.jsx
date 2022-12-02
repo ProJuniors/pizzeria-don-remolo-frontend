@@ -14,7 +14,7 @@ export default function Category() {
       <h3 className="font-Poppins font-medium text-[20px] mb-[30px]">
         Mira las distintas categorías
       </h3>
-      <div className="flex justify-between">
+      <div className="flex justify-around gap-2">
         {buttonIcons.map((btn, index) => {
           const key = `icon-${index}`;
           return <CategoryButton key={key} categories={btn} show={{ active, setActive }} />;
